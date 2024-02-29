@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .hero {
+            background-image: url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=600');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 20px;
+        }
+        .feature {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .feature-item {
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #eee;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .feature-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Book Store</h1>
+    </header>
+    <nav>
+        <a href="#">Login</a>
+        <a href="#">Biodata</a>
+        <a href="#">Catelogue</a>
+        <a href="#">Contact</a>
+    </nav>
+    <section class="hero">
+        <h1>A Complete BOOK STORE</h1>
+       
+    </section>
+    <section class="feature">
+        <div class="feature-item">
+            <h2>Cost Effective</h2>
+            <p>All books are avaialable at effective price.</p>
+        </div>
+        <div class="feature-item">
+            <h2>Free Delivery</h2>
+            <p>On all items free home delivery is avaialable.</p>
+        </div>
+        <div class="feature-item">
+            <h2>Online Books</h2>
+            <p>Different Types of Books are avaialable in online mode.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy;  All rights reserved.</p>
+    </footer>
+</body>
+</html>

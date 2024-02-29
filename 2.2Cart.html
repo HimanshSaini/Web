@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online book store</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    position: sticky;
+    top: 0;
+}
+
+nav .navbar{
+    /* width: 80vw; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav .navbar .logo{
+    width: 15vw;
+}
+
+nav .navbar .logo img{
+    height: 6vw;
+    margin: 5px;
+    border: none;
+    border-radius: 50px;
+}
+
+nav .navbar .nav{
+    margin: 0 5vw;
+}
+
+nav .navbar .nav ul{
+    display: flex;
+    list-style-type: none;
+    font-size: 30px;
+    color: white;
+}
+
+nav .navbar .nav ul li{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+nav .navbar .nav ul li img{
+    filter: invert(1);
+}
+
+nav .navbar .nav ul li:hover{
+    color: rgb(201, 194, 209);
+    /* background-color: rgb(75, 72, 72); */
+    cursor: pointer;
+}
+
+.navbar .login{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.navbar .login a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-family: cursive;
+}
+
+.navbar .login a:hover{
+    color: rgb(237, 95, 237);
+}
+
+
+main{
+    width: 100vw;
+    min-height: 90vh;
+    background-color: rgb(236, 230, 230);
+    display: flex;
+    justify-content: center;
+    padding: 80px 0px;
+}
+
+main .sections{
+    width: 70vw;
+}
+
+main .sections .section{
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr;
+    padding: 20px 0px;
+    margin: 10PX;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+} 
+
+main .sections .section .secImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .sections .section .secImg img{
+    height: 25vh;
+}
+
+main .sections .section .info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .sections .section .info .quantity{
+    display: flex;
+    gap: 5px;
+}
+
+main .sections .section .info .header{
+    font-size: 28px;
+}
+
+main .sections .section .info .by .first{
+    color: red;
+}
+
+main .sections .section .info .by .second a{
+    color: rgb(32, 133, 188);
+    text-decoration: none;
+}
+
+main .sections .section .info .by .second a:hover{
+    color: rgb(12, 63, 91);
+}
+
+main .sections .section .info .price{
+    font-size: 24px;
+    color: red;
+}
+
+main .sections .section .info .quantity .minus,main .sections .section .info .quantity .add{
+    width: 15px;
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+main .sections .section .info .quantity .quan{
+    width: 20px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+main .sections .section .info .TP{
+    font-size: 24px;
+    color: red;
+}
+
+main .sections .section .btns{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+main .sections .section .btns button{
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 2px solid red;
+    background-color: red;
+    color: white;
+}
+
+main .sections .section .btns .white{
+    background-color: white;
+    color: red;
+}
+
+footer{
+    background-color: rgb(236, 230, 230);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    min-height: 50vh;
+    width: 100vw;
+}
+
+.footer{
+    /* position: fixed;
+    bottom: 0;
+    left: 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 50px;
+    width: 80vw;
+    background-color: rgb(204, 204, 198);
+    box-shadow: 5px 5px 25px black;
+}
+
+.footer .checkout button, .footer .back button{
+    width: 75vw;
+    padding: 10px;
+    margin: 2px;
+    font-size: 25px;
+    background-color: red;
+    color: white;
+    font-family: cursive;
+    border-radius: 20px;
+    border: 2px solid red;
+    cursor: pointer;
+}
+
+.footer .back button{
+    background-color: white;
+    color: red;
+}
+
+footer .header{
+    margin: 30px 0;
+    font-size: 30px;
+    color: rgb(77, 72, 72);
+}
+
+footer .grid{
+    padding: 20px 0;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+footer .grid .footerbox{
+    display: flex;
+    flex-direction: column;
+}
+
+footer .grid .footerbox select{
+    width: 120px;
+}
+
+footer .grid a{
+    text-decoration: none;
+    color: rgb(77, 72, 72);
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://images.sftcdn.net/images/t_app-icon-s/p/e07f36d4-9a67-11e6-9dd4-00163ed833e7/3384251869/book-bazaar-reader-windows-10-logo.png" alt="logo">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact</li>
+                    <li>New Releases</li>
+                    <li>Gifts</li>
+                    <li>Cart&nbsp;<img src="https://cdn.hugeicons.com/icons/shopping-cart-02-stroke-rounded.svg" alt="shopping-cart-02" width="24" height="24" /></li>
+                </ul>
+            </div>
+            <div class="login">
+                <a href="indexR.html">Sign Up</a>
+                <a href="indexR.html">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="sections" id="sections">
+            <div class="section">
+                <div class="secImg">
+                    <img src="https://m.media-amazon.com/images/I/81BE7eeKzAL._SY466_.jpg" alt="">
+                </div>
+                <div class="info">
+                    <div class="header">Rich Dad Poor Dad (Signed by the Author)</div>
+                    <div class="by">
+                        <span class="first">By:</span> 
+                        <span class="second"><a href="https://en.wikipedia.org/wiki/Rich_Dad_Poor_Dad" target="_blank">Robert T. Kiyosaki and Sharon Lechter</a></span>
+                    </div>
+                    <div class="price"> ₹489.00</div>
+                    <div class="quantity">
+                        <div class="minus">-</div>
+                        <div class="quan">1</div>
+                        <div class="add">+</div>
+                    </div>
+                    <div class="TP">Total Price : ₹489.00 </div>
+                </div>
+                <div class="btns">
+                    <button>Move to Wishlist</button>
+                    <button class="white">Remove</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="secImg">
+                    <img src="https://m.media-amazon.com/images/I/51Z9p5AecCL._SY445_SX342_.jpg" alt="">
+                </div>
+                <div class="info">
+                    <div class="header">To Kill a Mockingbird (Signed by the Author)</div>
+                    <div class="by">
+                        <span class="first">By:</span> 
+                        <span class="second"><a href="https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird" target="_blank">Harper Lee</a></span>
+                    </div>
+                    <div class="price"> ₹599.00</div>
+                    <div class="quantity">
+                        <div class="minus">-</div>
+                        <div class="quan">1</div>
+                        <div class="add">+</div>
+                    </div>
+                    <div class="TP">Total Price : ₹599.00 </div>
+                </div>
+                <div class="btns">
+                    <button>Move to Wishlist</button>
+                    <button class="white">Remove</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="secImg">
+                    <img src="https://m.media-amazon.com/images/I/51APkyJzNlL._SY445_SX342_.jpg" alt="">
+                </div>
+                <div class="info">
+                    <div class="header">The Book Thief (Signed by the Author)</div>
+                    <div class="by">
+                        <span class="first">By:</span> 
+                        <span class="second"><a href="https://en.wikipedia.org/wiki/The_Book_Thief" target="_blank">Markus Zusak</a></span>
+                    </div>
+                    <div class="price"> ₹260.30</div>
+                    <div class="quantity">
+                        <div class="minus">-</div>
+                        <div class="quan">1</div>
+                        <div class="add">+</div>
+                    </div>
+                    <div class="TP">Total Price : ₹260.30 </div>
+                </div>
+                <div class="btns">
+                    <button>Move to Wishlist</button>
+                    <button class="white">Remove</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="secImg">
+                    <img src="https://m.media-amazon.com/images/I/51Pmxg290BL._SY445_SX342_.jpg" alt="">
+                </div>
+                <div class="info">
+                    <div class="header">Children of Time</div>
+                    <div class="by">
+                        <span class="first">By:</span> 
+                        <span class="second"><a href="https://en.wikipedia.org/wiki/Children_of_Time_(novel)" target="_blank">Adrian Tchaikovsky</a></span>
+                    </div>
+                    <div class="price"> ₹389.00</div>
+                    <div class="quantity">
+                        <div class="minus">-</div>
+                        <div class="quan">1</div>
+                        <div class="add">+</div>
+                    </div>
+                    <div class="TP">Total Price : ₹389.00 </div>
+                </div>
+                <div class="btns">
+                    <button>Move to Wishlist</button>
+                    <button class="white">Remove</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="secImg">
+                    <img src="https://m.media-amazon.com/images/I/51-78lFnmbL._SY445_SX342_.jpg" alt="">
+                </div>
+                <div class="info">
+                    <div class="header">Atomic Habits</div>
+                    <div class="by">
+                        <span class="first">By:</span> 
+                        <span class="second"><a href="https://en.wikipedia.org/wiki/James_Clear" target="_blank">James Clear</a></span>
+                    </div>
+                    <div class="price"> ₹599.00</div>
+                    <div class="quantity">
+                        <div class="minus">-</div>
+                        <div class="quan">1</div>
+                        <div class="add">+</div>
+                    </div>
+                    <div class="TP">Total Price : ₹599.00 </div>
+                </div>
+                <div class="btns">
+                    <button>Move to Wishlist</button>
+                    <button class="white">Remove</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="secImg">
+                    <img src="https://m.media-amazon.com/images/I/41MBeYNFUOL._SY445_SX342_.jpg" alt="">
+                </div>
+                <div class="info">
+                    <div class="header">In Search of Lost Time</div>
+                    <div class="by">
+                        <span class="first">By:</span> 
+                        <span class="second"><a href="https://en.wikipedia.org/wiki/In_Search_of_Lost_Time" target="_blank">	Marcel Proust</a></span>
+                    </div>
+                    <div class="price"> ₹689.00</div>
+                    <div class="quantity">
+                        <div class="minus">-</div>
+                        <div class="quan">1</div>
+                        <div class="add">+</div>
+                    </div>
+                    <div class="TP">Total Price : ₹689.00 </div>
+                </div>
+                <div class="btns">
+                    <button>Move to Wishlist</button>
+                    <button class="white">Remove</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="checkout">
+                <button>Proceed to check out</button>
+            </div>
+            <div class="back">  
+                <button>Back to Cart</button>
+            </div>
+        </div>
+    
+        
+        <div class="grid">
+            <div class="footerbox">
+                <a href="">FAQ</a>
+                <a href="">Privacy</a>
+                <a href="">Speed Test</a>
+                <a href="">Book Bazaar India</a>
+            </div>
+            
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Registration Page</title>
+       <style>
+           *{
+    padding: 0;
+    margin: 0;
+}
+form{
+    padding: 20px;
+    border: 2px solid black;
+    margin-right: 40%;
+    margin-top: 13%;
+    margin-left: 38%;
+    border-radius: 30px;
+    filter: drop-shadow(2px, 4px, 6px, black);
+    background-color: transparent;
+    backdrop-filter: blur(12px);
+    width: max-content;
+    color: ghostwhite;
+}
+.signup_header{
+    text-align: center;
+    color: cornsilk;
+}
+body{
+    background-image: url("https://th.bing.com/th/id/OIP.imdQOfTlix7XiSEJ28WeZgHaEo?rs=1&pid=ImgDetMain");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+form input{
+   
+   padding: 2px;
+}
+form select{
+    padding: 2px;
+}
+#telnum{
+    width: 70%;
+}
+#email{
+    width: 94.5%;
+}
+.password{
+    width: 94.5%;
+}
+form a{
+    color:azure;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(91, 179, 255);
+}
+form h2 img{
+    position: absolute;
+    right: 334px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 2px;
+}
+form h2 img:hover{
+    filter: invert(0.3);
+}
+       </style>
+    </head>
+    <body>
+        <form>
+            <h2 class="signup_header"><a href="index.html"><img src="https://cdn.hugeicons.com/icons/arrow-left-02-stroke-rounded.svg" alt="arrow-left-02" width="24" height="24" /></a>Sign Up</h2>
+            <br>
+            <input type="text" placeholder="First Name" id="first_name" class="name" required>
+            <input type="text" placeholder="Last Name" id="last_name" class="name">
+            <br><br>
+            <select id="country_code" class="mobile_number">
+                <option>IN +91</option>
+               
+            </select>
+            <input type="number" placeholder="Enter Mobile Number" id="telnum" class="mobile_number" required>
+            <br><br>
+            <input type="email" placeholder="Email" id="email" required>
+            <br><br>
+
+            <input type="password" placeholder="Password" id="Password" class="password" required>
+            <br><br>
+            <input type="password" placeholder="Confirm Password" id="Confirm_password" class="password">
+            <br><br>
+            <input type="checkbox" id="t&c" required>
+            <label for="t&c">I accept the Terms of Use & Privacy Policy</label>
+            <br><br>
+            <button id="signup">Sign Up</button>
+            <br><br>
+            <label>Already have an account?..<a href="">Login Here</a></label>
+            <br><br>
+            <footer>&copy The Book Bazaar</footer>
+        </form>
+    </body>
+</html>
